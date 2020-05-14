@@ -30,3 +30,12 @@ http://localhost:1337/
 
 sudo systemctl start mongod
 sudo systemctl status mongod
+
+create
+curl -X POST -d '{"title":"Babka piaskowa","description":"Zebrać piasek"}' -H "Content-Type: application/json" http://127.0.0.1:1337/api/v1/recipe
+
+delete
+curl -X DELETE -H "Content-Type: application/json" http://127.0.0.1:1337/api/v1/recipe/Babka-piaskowa-fxtewjw
+
+update
+curl -X PUT -d '{"title":"Babka piaskowa pieczona","description":"Zebrać piasek i upiec"}' -H "Content-Type: application/json" http://127.0.0.1:1337/api/v1/recipe/Babka-piaskowa-fxtewjw
