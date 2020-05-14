@@ -24,7 +24,7 @@ module.exports = {
   fn: async function (inputs) {
     let recipe = Recipe.findOne({ slug: inputs.slug });
 
-    return recipe;
+    return recipe;  
   }
 
 
