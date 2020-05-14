@@ -20,6 +20,8 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
+  'GET /api/v1/recipe': { action: 'recipe/index' },
+  'GET /api/v1/recipe/:slug': { action: 'recipe/show' },
 
 
   /***************************************************************************
