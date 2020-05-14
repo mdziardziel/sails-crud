@@ -20,9 +20,15 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
+
+
+  // API
   'GET /api/v1/recipe': { action: 'recipe/index' },
   'GET /api/v1/recipe/:slug': { action: 'recipe/show' },
   'POST /api/v1/recipe': { action: 'recipe/create' },
+  'DELETE /api/v1/recipe/:slug': { action: 'recipe/destroy' },
+  'PUT /api/v1/recipe/:slug': { action: 'recipe/update' },
+
 
 
 

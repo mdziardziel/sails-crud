@@ -1,10 +1,10 @@
 module.exports = {
 
 
-  friendlyName: 'Show',
+  friendlyName: 'Destroy',
 
 
-  description: 'Show recipe.',
+  description: 'Destroy recipe.',
 
 
   inputs: {
@@ -22,9 +22,11 @@ module.exports = {
 
 
   fn: async function (inputs) {
-    let recipe = Recipe.findOne({ slug: inputs.slug });
+    let recipe = Recipe.destroyOne({ slug: inputs.slug });
 
-  return recipe;  
+    // All done.
+    return recipe;
+
   }
 
 
