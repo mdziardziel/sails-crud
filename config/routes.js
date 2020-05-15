@@ -19,7 +19,11 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
+  '/': { action: 'recipe/view-index' },
+  '/new': { action: 'recipe/view-new' },
+  '/show/:slug': { action: 'recipe/view-show' },
+  '/edit/:slug': { action: 'recipe/view-edit' },
+
 
 
   // API

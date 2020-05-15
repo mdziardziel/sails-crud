@@ -1,0 +1,18 @@
+<div id="index" v-cloak>
+
+  <h1>Cookbook</h1>
+  <h2>All recipes</h2>
+  <div class="card-columns">
+    <% recipes.forEach(function(recipe) { %>
+      <div class="card" id="<%= 'card-' + recipe.slug %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= recipe.title %></h5>
+          <p class="card-text"><%= recipe.description %></p>
+          <a href="<%= '/show/' + recipe.slug %>" class="btn btn-primary">Show</a>
+          <a href="<%= '/edit/' + recipe.slug %>" class="btn btn-secondary">Edit</a>
+          <a href="#" onclick="deleteRecipe('<%= recipe.slug %>')" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
