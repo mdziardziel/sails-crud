@@ -1,0 +1,19 @@
+<div id="show" v-cloak>
+
+  <h1>Cookbook</h1>
+  <h2><%= recipe.title %> recipe</h2>
+  <p><%= recipe.description %></p>
+  <h3>Ingredients</h3>
+  <ul class="list-group">
+    <% recipe.ingredients.forEach(function(ingredient) { %>
+      <a class="list-group-item">
+        <span class="label label-default label-pill"><%= ingredient.quantity %></span>
+        <%= ingredient.name %>
+      </a>  
+    <% }) %>
+  </ul>
+
+  <a href="#" onclick="redirectBack()" class="btn btn-primary">Back</a>
+  <a href="<%= '/edit/' + recipe.slug %>" class="btn btn-secondary">Edit</a>
+  <a href="#" onclick="deleteRecipe('<%= recipe.slug %>')" class="btn btn-danger">Delete</a>
+</div>
