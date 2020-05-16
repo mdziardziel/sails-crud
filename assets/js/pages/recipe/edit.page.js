@@ -33,7 +33,7 @@ var updateRecipe = function(slug) {
       description: $('#recipeDescriptionInput').val()
     },
     success: function(result) {
-      window.location = '/show/' + result.slug 
+      window.location = '/show/' + slug 
     }
 });
 } 

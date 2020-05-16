@@ -33,7 +33,7 @@ var createRecipe = function() {
       description: $('#recipeDescriptionInput').val()
     },
     success: function(result) {
-      window.location = '/'
+      window.location = '/show/' + result.slug
     }
 });
 } 
