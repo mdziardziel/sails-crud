@@ -4,7 +4,8 @@ var updateRecipe = function(slug) {
     type: 'PUT',
     data: {
       title: $('#recipeTitleInput').val(),
-      description: $('#recipeDescriptionInput').val()
+      description: $('#recipeDescriptionInput').val(),
+      ingredients: ingredientsFromForm()
     },
     success: function(result) {
       window.location = '/show/' + slug 

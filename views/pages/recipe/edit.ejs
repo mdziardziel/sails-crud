@@ -13,6 +13,18 @@
       <textarea type="text" class="form-control" id="recipeDescriptionInput" name="description"><%= recipe.description %></textarea>
     </div>
 
+    <h3>Ingredients <small><a class="btn btn-default" onclick="addIngredient()">Add new</a></small> </h3>
+    <div id="ingredientForm">
+      <% recipe.ingredients.forEach(function(ingredient) { %>
+        <div class="input-group">
+          <label>Name:</label>
+          <input class="form-control" id="ingredient-name" value="<%= ingredient.name %>">
+          <label> Quantity:</label>
+          <input class="form-control" id="ingredient-quantity" value="<%= ingredient.quantity %>">
+        </div>
+      <% }) %>
+    </div>
+
     <a class="btn btn-default" onclick="redirectBack()">Back</a>
     <a onclick="updateRecipe('<%= recipe.slug %>')" class="btn btn-primary btn-raised">Submit</a>
   </form>

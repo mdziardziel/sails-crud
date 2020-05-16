@@ -1,22 +1,23 @@
+var ingredientsFromForm = function(defaultName = "", defaultQuantity = ""){
+  var ingredients = []
+  $('#ingredientForm').find('.input-group').each(function(index) {
+    var ingredient = {
+      name: $(this).find('#ingredient-name').val(),
+      quantity: $(this).find('#ingredient-quantity').val()
+    }
+    ingredients.push(ingredient)
+  })
+  return ingredients;
+}
+
 var createRecipe = function() {
-  var ingredients = function(){
-    var ingredients = []
-    $('#ingredientForm').find('.input-group').each(function(index) {
-      var ingredient = {
-        name: $(this).find('#ingredient-name').val(),
-        quantity: $(this).find('#ingredient-quantity').val()
-      }
-      ingredients.push(ingredient)
-    })
-    return ingredients;
-  }
   $.ajax({
     url: '/api/v1/recipe/',
     type: 'POST',
     data: {
       title: $('#recipeTitleInput').val(),
       description: $('#recipeDescriptionInput').val(),
-      ingredients: ingredients()
+      ingredients: ingredientsFromForm()
     },
     success: function(result) {
       window.location = '/show/' + result.slug
