@@ -1,0 +1,19 @@
+<div id="edit" v-cloak>
+
+  <h1>Cookbook</h1>
+  <h2>Edit <%= recipe.title %> recipe</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="recipeTitleInput" class="bmd-label-floating">Title</label>
+      <input type="text" class="form-control" id="recipeTitleInput" name="title" value="<%= recipe.title %>">
+    </div>
+    <div class="form-group">
+      <label for="recipeDescriptionInput" class="bmd-label-floating">Description</label>
+      <textarea type="text" class="form-control" id="recipeDescriptionInput" name="description"><%= recipe.description %></textarea>
+    </div>
+
+    <a class="btn btn-default" onclick="redirectBack()">Back</a>
+    <a onclick="updateRecipe('<%= recipe.slug %>')" class="btn btn-primary btn-raised">Submit</a>
+  </form>
+</div>
